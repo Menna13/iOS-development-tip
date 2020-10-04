@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  tip
 //
-//  Created by Mennatullah Khaliel on 10/3/20.
+//  Created by Menna Khaliel on 10/3/20.
 //
 
 import UIKit
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         print("got first")
         let bill = Double(billField.text!) ?? 0
         let custom = Double(customTip.text!) ?? 0
-        let tipPercentage = [0.1,0.18,0.2, custom]
+        let tipPercentage = [0.1,0.18,0.2, custom * 0.01]
         
         let tip = bill * tipPercentage[tipControl.selectedSegmentIndex]
         let total = bill + tip
