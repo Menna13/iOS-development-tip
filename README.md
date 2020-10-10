@@ -31,11 +31,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![](https://i.imgur.com/FC0EsHQ.gif)
+![](https://i.imgur.com/ZdrPro3.gif)
 
 
 
-GIF created with [LiceCap](https://ezgif.com/video-to-gif/ezgif-6-266629c66f38.mov).
+GIF created with [OnlineConverter](https://www.onlineconverter.com/).
 
 ## Notes
 
