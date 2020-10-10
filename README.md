@@ -25,12 +25,15 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [X] The user can add a custom tip percentage!
+- [X] The user can set defualt tip percentages!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![](https://i.imgur.com/0RdHUCm.gif)
+![](https://i.imgur.com/FC0EsHQ.gif)
+
+
 
 GIF created with [LiceCap](https://ezgif.com/video-to-gif/ezgif-6-266629c66f38.mov).
 
