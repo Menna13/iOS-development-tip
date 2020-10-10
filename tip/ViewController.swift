@@ -12,15 +12,42 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
-
     @IBOutlet weak var customTip: UITextField!
-    //    @IBOutlet weak var customTip: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
-
+    var tipInput = [Double]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        print("got first")
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+
+        let defaults = UserDefaults.standard
+        let firstTipValue = defaults.string(forKey: "firstTip")!
+        let secondTipValue = defaults.string(forKey: "secondTip")!
+        let thirdTipValue = defaults.string(forKey: "thirdTip")!
+        print (firstTipValue, secondTipValue, thirdTipValue)
+        tipControl.setTitle(firstTipValue + "%", forSegmentAt: 0)
+        tipControl.setTitle(secondTipValue + "%", forSegmentAt: 1)
+        tipControl.setTitle(thirdTipValue + "%", forSegmentAt: 2)
+        tipInput = [Double(firstTipValue)!*0.01, Double(secondTipValue)!*0.01, Double(thirdTipValue)!*0.01,0]
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("view will disappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did disappear")
     }
 
 
@@ -30,21 +57,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func calculateTip(_ sender: Any) {
-        print("got first")
         let bill = Double(billField.text!) ?? 0
         let custom = Double(customTip.text!) ?? 0
-        let tipPercentage = [0.1,0.18,0.2, custom * 0.01]
-        
-        let tip = bill * tipPercentage[tipControl.selectedSegmentIndex]
+        tipInput[3] = custom * 0.001
+        let tip = bill * tipInput[tipControl.selectedSegmentIndex]
         let total = bill + tip
-        //Get the bill amount
-        // calculate the tip and total
-        //update tip and total labels
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
-        print("got last")
-        
     }
+    
 }
 
  
